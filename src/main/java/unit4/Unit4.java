@@ -29,9 +29,13 @@ public class Unit4 {
      * @return the sum of integers from 1 to n
      */
     public int sumNumbers(int n) {
-        // TODO: Implement this method
-        return 0;
+        if (n <= 0) return 0;
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+        sum += i;
     }
+    return sum;
+}
 
     /**
      * Returns a new String consisting of the given string repeated n times.
@@ -54,9 +58,14 @@ public class Unit4 {
      * @return the repeated string
      */
     public String repeatString(String str, int n) {
-        // TODO: Implement this method
-        return "";
+        if (n <= 0 || str.equals("")) return "";
+        String result = "";
+        for (int i = 0; i < n; i++) {
+        result += str;
     }
+    return result;
+}
+
 
     /**
      * Calculates the factorial of n (written as n!).
@@ -78,9 +87,12 @@ public class Unit4 {
      * @return the factorial of n
      */
     public int findFactorial(int n) {
-        // TODO: Implement this method
-        return 0;
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+        result *= i;
     }
+    return result;
+}
 
     /**
      * Counts the number of vowels (a, e, i, o, u) in the given string.
@@ -102,9 +114,16 @@ public class Unit4 {
      * @return the number of vowels found
      */
     public int countVowels(String str) {
-        // TODO: Implement this method
-        return 0;
+        int count = 0;
+
+    for (int i = 0; i < str.length(); i++) {
+        char c = Character.toLowerCase(str.charAt(i));
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            count++;
+        }
     }
+    return count;
+}
 
     /**
      * Checks if the given string is a palindrome (reads the same forwards
@@ -129,9 +148,13 @@ public class Unit4 {
      * @return true if the string is a palindrome, false otherwise
      */
     public boolean isPalindrome(String str) {
-        // TODO: Implement this method
-        return false;
+        for (int i = 0; i < str.length() / 2; i++) {
+        if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+            return false;
+        }
     }
+    return true;
+}
 
     /**
      * Prints three asterisk patterns using System.out.print() with "\n"
@@ -160,8 +183,25 @@ public class Unit4 {
      * @param n the size parameter for the patterns
      */
     public void printAsteriskPatterns(int n) {
-        // TODO: Implement this method
+        for (int i = 0; i < n; i++) {
+        System.out.print("*");
     }
+    System.out.print("\n");
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            System.out.print("*");
+        }
+        System.out.print("\n");
+    }
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < i; j++) {
+            System.out.print("*");
+        }
+        System.out.print("\n");
+    }
+}
 
     /**
      * Prints a multiplication table from 1x1 up to nxn.
@@ -184,6 +224,11 @@ public class Unit4 {
      * @param n the size of the table (n x n)
      */
     public void multiplicationTable(int n) {
-        // TODO: Implement this method
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(i * j + "\t");
+            }
+        System.out.print("\n");
     }
+}
 }
